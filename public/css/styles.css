@@ -1866,4 +1866,458 @@ form[action="/admin/vehicles/delete"] button:hover {
   }
 }
 
+/* Base container & typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+
+.profile-container {
+  max-width: 650px;
+  margin: 2rem auto;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+/* Card layout */
+.client-profile-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  border: 1px solid #e2e8f0;
+  padding: 2rem;
+}
+
+/* Header / Avatar Section */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  background-color: #3b82f6; /* Modern primary blue */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.profile-meta h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.role-badge {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Grid Info Fields */
+.card-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+  .card-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.info-group.full-width {
+  grid-column: span 2;
+}
+
+@media (max-width: 480px) {
+  .info-group.full-width {
+    grid-column: span 1;
+  }
+}
+
+.info-group label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.info-value {
+  margin: 0;
+  font-size: 1rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* Buttons and Actions */
+.card-footer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #0f172a; /* Sleek dark neutral */
+  color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1e293b;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Error Alert */
+.error-message {
+  background-color: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.error-message p {
+  margin: 0;
+  color: #991b1b;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
 /*# sourceMappingURL=styles.css.map */
+
+
+/* Form Styling Extensions */
+.edit-form {
+  margin: 0;
+}
+
+/* Avatar Upload Header Layout */
+.form-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar.edit-mode {
+  position: relative;
+  overflow: hidden;
+  background-color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.profile-avatar.edit-mode img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-upload-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Custom Styled File Input Button */
+.file-upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.file-upload-label:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.file-input-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.file-help-text {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Form Groups & Inputs */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+@media (max-width: 480px) {
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1e293b;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focused State Styling */
+.form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Actions Footer buttons */
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.btn-light {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: #64748b;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.btn-light:hover {
+  color: #1e293b;
+}
+
+
+/* Container Wrapper for the Table Card */
+.bookings-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+/* Modern Borderless Data Table layout */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.modern-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.modern-data-table th {
+  background-color: #f8fafc;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: #64748b;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.modern-data-table td {
+  padding: 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+  color: #334155;
+}
+
+.modern-data-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Typography elements */
+.vehicle-title-text {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.plate-code-badge {
+  font-family: 'SFMono-Regular', Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.history-currency-text {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Status Pill Indicators */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.status-pill.status-completed {
+  background-color: #f0fdf4;
+  color: #166534;
+}
+
+.status-pill.status-approved {
+  background-color: #eff6ff;
+  color: #1e40af;
+}
+
+.status-pill.status-rejected {
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+.status-pill.status-pending {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+/* Interactive Action Element Styles */
+.btn-action-review {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.btn-action-review:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.badge-reviewed-done {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #166534;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.action-null-dash {
+  color: #cbd5e1;
+}
+
+.text-right {
+  text-align: right;
+  padding-right: 1.5rem !important;
+}
+
+/* Clean Alert Banner */
+.success-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}

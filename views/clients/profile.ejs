@@ -1,18 +1,52 @@
-<% if (typeof title !== 'undefined' && title) { %>
-  <h1><%= title %></h1>
-<% } else { %>
-  <h1>Client Profile</h1>
-<% } %>
+<div class="profile-container">
+  <% if (typeof title !== 'undefined' && title) { %>
+    <h1 class="page-title"><%= title %></h1>
+  <% } else { %>
+    <h1 class="page-title">Client Profile</h1>
+  <% } %>
 
-<% if (typeof error !== 'undefined' && error) { %>
-  <p class="error"><%= error %></p>
-<% } %>
+  <% if (typeof error !== 'undefined' && error) { %>
+    <div class="error-message">
+      <p><%= error %></p>
+    </div>
+  <% } %>
 
-<section class="clientProfile">
-  <h2>Your Profile</h2>
-  <p><strong>Name:</strong> <%= sessionUser.clientName %></p>
-  <p><strong>Email:</strong> <%= sessionUser.clientEmail %></p>
-  <p><strong>Phone:</strong> <%= sessionUser.clientPhone %></p>
-  <p><strong>Address:</strong> <%= sessionUser.clientAddress %></p>
-  <a href="/clients/profile/edit" class="btn-secondary">Edit Profile</a>
-</section>
+  <section class="client-profile-card">
+    <div class="card-header">
+      <div class="profile-avatar">
+        <!-- Generates initials based on the first letter of the name -->
+        <span><%= sessionUser.clientName ? sessionUser.clientName.charAt(0).toUpperCase() : 'C' %></span>
+      </div>
+      <div class="profile-meta">
+        <h2><%= sessionUser.clientName %></h2>
+        <p class="role-badge">Client Account</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="card-body">
+      <div class="info-group">
+        <label>Email Address</label>
+        <p class="info-value"><%= sessionUser.clientEmail %></p>
+      </div>
+      
+      <div class="info-group">
+        <label>Phone Number</label>
+        <p class="info-value"><%= sessionUser.clientPhone || 'Not provided' %></p>
+      </div>
+      
+      <div class="info-group full-width">
+        <label>Physical Address</label>
+        <p class="info-value"><%= sessionUser.clientAddress || 'Not provided' %></p>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <a href="/clients/profile/edit" class="btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+        Edit Profile
+      </a>
+    </div>
+  </section>
+</div>
