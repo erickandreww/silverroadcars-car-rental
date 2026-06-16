@@ -140,11 +140,11 @@ body {
       align-items: center;
 
       form {
-        background-color: #e4eef1;
+        background-color: $white;
         display: flex;
         flex-direction: column;
         padding: .5rem;
-        border: solid 1px #000;
+        border-radius: 8px;
         margin: 1rem 0;
         row-gap: 12px;
         width: 100%;
@@ -157,11 +157,22 @@ body {
         select,
         input,
         button {
+          font-family: $f-base;
           box-sizing: border-box;
           height: 40px;
           font-size: 1.2rem;
           line-height: 1.2;
           resize: vertical;
+          border: solid 1px #C7C7C7;
+          border-radius: 4px;
+        }
+
+        input:focus {
+          border: solid 1px $blue;
+        }
+
+        button {
+          background-color: $blue;
         }
 
         select {
@@ -188,6 +199,7 @@ body {
         max-width: 600px;
         margin: 0 auto;
         background-color: $blue;
+        border-radius: 8px;
 
         p {
           text-align: center;
@@ -206,6 +218,7 @@ body {
           padding: 1rem 2rem 1rem;
           width: 85%;
           margin: 0 auto;
+          border-radius: 4px;
         }
 
         button {
@@ -233,6 +246,1650 @@ body {
           width: 100%;
           height: 300px;
 
+        }
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+
+        .pagination-link {
+          padding: 0.55rem 0.85rem;
+          border: 1px solid #d1d5db;
+          border-radius: 8px;
+          color: #2563eb;
+          text-decoration: none;
+          font-weight: 700;
+          background-color: #ffffff;
+        }
+
+        .pagination-link:hover {
+          background-color: #eff6ff;
+        }
+
+        .pagination-link.active {
+          background-color: #2563eb;
+          color: #ffffff;
+          border-color: #2563eb;
+        }
+      }
+
+    }
+
+    /*Auth pages*/
+
+    .auth-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 90px);
+      background-color: #F4F4F4;
+      padding: 2rem 1rem;
+
+      .auth-card {
+        background: #FFFFFF;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        padding: 2.5rem 2rem;
+        width: 100%;
+        max-width: 420px;
+
+        h1 {
+          font-family: "Boogaloo", cursive;
+          font-size: 2rem;
+          margin: 0 0 1.5rem 0;
+          color: #000000;
+          text-align: center;
+        }
+
+        .auth-error {
+          background-color: #ffe5e5;
+          color: #cc0000;
+          border: 1px solid #cc0000;
+          border-radius: 4px;
+          padding: 0.6rem 1rem;
+          margin-bottom: 1.2rem;
+          font-size: 0.95rem;
+        }
+
+        .auth-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.1rem;
+
+          .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+          }
+
+          .form-group label {
+            font-family: "Roboto Condensed", sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #333333;
+          }
+
+          .form-group input {
+            padding: 0.65rem 0.8rem;
+            border: 1px solid #C7C7C7;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: "Roboto Condensed", sans-serif;
+            transition: border-color 0.2s;
+          }
+
+          .form-group input:focus {
+            outline: none;
+            border-color: #319CC6;
+          }
+
+          .btn-primary {
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            background-color: #FF6F15;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-family: "Boogaloo", cursive;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+          }
+
+          .btn-primary:hover {
+            background-color: #e05e0a;
+          }
+        }
+
+        .auth-options {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          margin-top: 1.5rem;
+
+          .btn-secondary {
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            background-color: #319CC6;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-family: "Boogaloo", cursive;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+          }
+
+          .btn-secondary:hover {
+            background-color: #b0b0b0;
+          }
+        }
+
+        .auth-switch {
+          text-align: center;
+          margin-top: 1.2rem;
+          font-size: 0.95rem;
+          color: #555555;
+
+          a {
+            color: #319CC6;
+            text-decoration: none;
+            font-weight: 600;
+          }
+
+          .auth-switch a:hover {
+            text-decoration: underline;
+          }
+        }
+
+      }
+    }
+
+    /*Admin Dashboard*/
+    .admin-dashboard {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+
+      .dashboard-intro {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .dashboard-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+
+        .dashboard-card {
+          display: block;
+          padding: 1.5rem;
+          border: 1px solid #ddd;
+          border-radius: 12px;
+          text-decoration: none;
+          color: inherit;
+          background: #fff;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+          h2 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+          }
+
+          p {
+            margin-bottom: 1rem;
+          }
+
+          span {
+            font-weight: bold;
+          }
+        }
+
+        .dashboard-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    .admin-dashboard,
+    .users-dashboard {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem;
+    }
+
+    /* Admin General Layout */
+    h1 {
+      max-width: 1100px;
+      margin: 2rem auto 1rem auto;
+      padding: 0 1rem;
+      color: #111827;
+    }
+
+    .admin-section,
+    .maintenance-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        color: #111827;
+      }
+
+      .admin-form,
+      .addUser,
+      .editUser,
+      .addCar,
+      .editCar,
+      .maintenance-form,
+      #addUser-form,
+      #editUser-form,
+      #addCar-form,
+      #editCar-form {
+        width: 100%;
+
+        fieldset {
+          border: none;
+          padding: 0;
+          margin: 0;
+
+          label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #374151;
+
+            input,
+            select,
+            textarea {
+              width: 100%;
+              margin-top: 0.4rem;
+              padding: 0.75rem;
+              border: 1px solid #d1d5db;
+              border-radius: 8px;
+              font-size: 1rem;
+              box-sizing: border-box;
+              background-color: #ffffff;
+            }
+          }
+        }
+      }
+
+      .admin-form textarea,
+      .maintenance-form textarea {
+        resize: vertical;
+      }
+
+      .admin-form input:focus,
+      .admin-form select:focus,
+      .admin-form textarea:focus,
+      .addUser input:focus,
+      .addUser select:focus,
+      .editUser input:focus,
+      .editUser select:focus,
+      .addCar input:focus,
+      .addCar select:focus,
+      .editCar input:focus,
+      .editCar select:focus,
+      .maintenance-form input:focus,
+      .maintenance-form select:focus,
+      .maintenance-form textarea:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      }
+
+      button,
+      .btn-primary {
+        display: inline-block;
+        padding: 0.75rem 1.25rem;
+        background-color: #2563eb;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      button:hover,
+      .btn-primary:hover {
+        background-color: #1d4ed8;
+      }
+
+      .delete-form {
+        margin-top: 1rem;
+
+        .btn-danger,
+        .delete-form button,
+        form[action="/admin/users/delete"] button,
+        form[action="/admin/vehicles/delete"] button {
+          margin-top: 1rem;
+          background-color: #dc2626;
+        }
+
+        .btn-danger:hover,
+        .delete-form button:hover,
+        form[action="/admin/users/delete"] button:hover,
+        form[action="/admin/vehicles/delete"] button:hover {
+          background-color: #b91c1c;
+        }
+      }
+
+      .admin-table,
+      .users-table,
+      .vehicles-table {
+        width: 100%;
+        max-width: 1100px;
+        margin: 2rem auto;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+
+        thead,
+        thead,
+        thead {
+          background-color: #111827;
+          color: #ffffff;
+        }
+
+        .admin-table th,
+        td,
+        th,
+        td,
+        th,
+        td {
+          padding: 0.9rem 1rem;
+          text-align: left;
+          border-bottom: 1px solid #e5e7eb;
+        }
+
+        tbody tr:hover,
+        tbody tr:hover,
+        tbody tr:hover {
+          background-color: #f3f4f6;
+        }
+
+        a,
+        a,
+        a {
+          color: #2563eb;
+          font-weight: 700;
+          text-decoration: none;
+        }
+
+        a:hover,
+        a:hover,
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .btn-success {
+        background-color: #16a34a;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .btn-success:hover {
+        background-color: #15803d;
+      }
+
+    }
+
+
+
+    /* Admin Dashboard */
+    .admin-dashboard {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem;
+
+      .dashboard-intro {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+        color: #4b5563;
+
+        .dashboard-cards {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 1.5rem;
+
+          .dashboard-card {
+            display: block;
+            padding: 1.75rem;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #111827;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+            h2 {
+              margin-top: 0;
+              margin-bottom: 0.75rem;
+              color: #111827;
+            }
+
+            p {
+              color: #4b5563;
+              line-height: 1.5;
+            }
+          }
+
+          .dashboard-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+          }
+        }
+      }
+    }
+
+    .notice {
+      max-width: 900px;
+      margin: 1rem auto;
+      padding: 1rem;
+      background-color: #fee2e2;
+      color: #991b1b;
+      border-left: 5px solid #dc2626;
+      border-radius: 8px;
+      list-style-position: inside;
+    }
+
+    .success {
+      max-width: 900px;
+      margin: 1rem auto;
+      padding: 1rem;
+      background-color: #dcfce7;
+      color: #166534;
+      border-left: 5px solid #16a34a;
+      border-radius: 8px;
+    }
+
+    .admin-list-section {
+      max-width: 1100px;
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+
+        h2 {
+          margin: 0;
+        }
+      }
+
+      .table-action {
+        color: #2563eb;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .table-action:hover {
+        text-decoration: underline;
+      }
+
+      .return-link {
+        display: inline-block;
+        margin-top: 1.5rem;
+        color: #374151;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .return-link:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 700px) {
+        .section-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      /* Bookings Pages */
+      .bookings-table small {
+        color: #6b7280;
+      }
+
+      .table-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+
+        .inline-form {
+          display: inline-block;
+          margin: 0;
+        }
+
+        .btn-small {
+          padding: 0.45rem 0.75rem;
+          font-size: 0.85rem;
+          border-radius: 6px;
+        }
+      }
+
+      .status-badge {
+        display: inline-block;
+        padding: 0.35rem 0.65rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+
+      .status-pending {
+        background-color: #fef3c7;
+        color: #92400e;
+      }
+
+      .status-approved {
+        background-color: #dbeafe;
+        color: #1e40af;
+      }
+
+      .status-rejected {
+        background-color: #fee2e2;
+        color: #991b1b;
+      }
+
+      .status-cancelled {
+        background-color: #e5e7eb;
+        color: #374151;
+      }
+
+      .status-active {
+        background-color: #dcfce7;
+        color: #166534;
+      }
+
+      .status-completed {
+        background-color: #ede9fe;
+        color: #5b21b6;
+      }
+
+    }
+
+    .booking-details-section {
+      max-width: 1100px;
+
+      .details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+
+        .details-card {
+          padding: 1.25rem;
+          border: 1px solid #e5e7eb;
+          border-radius: 12px;
+          background-color: #f9fafb;
+
+          h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: #111827;
+          }
+
+          p {
+            margin: 0.65rem 0;
+            color: #374151;
+          }
+        }
+      }
+
+      .booking-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+
+        form {
+          margin: 0;
+        }
+      }
+    }
+
+    /* Contact page */
+    .contact-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+
+      .contact-hero {
+        text-align: center;
+        padding: 2.5rem 1rem 2rem;
+
+        h1 {
+          font-family: "Boogaloo", cursive;
+          font-size: 2.8rem;
+          margin: 0 0 0.5rem;
+          color: #000000;
+        }
+
+        p {
+          font-family: "Roboto Condensed", sans-serif;
+          font-size: 1.1rem;
+          color: #555555;
+          margin: 0;
+        }
+      }
+
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 1.5rem;
+
+        .contact-info {
+          h2 {
+            font-family: "Boogaloo", cursive;
+            font-size: 1.6rem;
+            margin: 0 0 1.5rem;
+            color: #000000;
+          }
+
+          .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1.4rem;
+
+            strong {
+              display: block;
+              font-family: "Roboto Condensed", sans-serif;
+              font-weight: 700;
+              font-size: 0.95rem;
+              color: #000000;
+            }
+
+            .contact-icon {
+              font-size: 1.4rem;
+              margin-top: 2px;
+            }
+
+
+
+            p {
+              margin: 0.2rem 0 0;
+              font-family: "Roboto Condensed", sans-serif;
+              font-size: 0.95rem;
+              color: #555555;
+              line-height: 1.5;
+            }
+          }
+        }
+
+        .contact-form-wrap {
+          background: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+          padding: 2rem;
+
+          .contact-success {
+            text-align: center;
+            padding: 2rem;
+
+            h2 {
+              font-family: "Boogaloo", cursive;
+              font-size: 2rem;
+              color: #000000;
+              margin-bottom: 0.5rem;
+            }
+
+            p {
+              font-family: "Roboto Condensed", sans-serif;
+              color: #555555;
+              margin-bottom: 1.5rem;
+            }
+          }
+
+          .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+
+            textarea {
+              padding: 0.65rem 0.8rem;
+              border: 1px solid #C7C7C7;
+              border-radius: 4px;
+              font-size: 1rem;
+              font-family: "Roboto Condensed", sans-serif;
+              resize: vertical;
+              transition: border-color 0.2s;
+            }
+
+            textarea:focus {
+              outline: none;
+              border-color: #319CC6;
+            }
+
+            .form-row {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 1rem;
+
+              .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
+
+                label {
+                  font-family: "Roboto Condensed", sans-serif;
+                  font-weight: 600;
+                  font-size: 0.95rem;
+                  color: #333333;
+                }
+
+                input {
+                  padding: 0.65rem 0.8rem;
+                  border: 1px solid #C7C7C7;
+                  border-radius: 4px;
+                  font-size: 1rem;
+                  font-family: "Roboto Condensed", sans-serif;
+                  transition: border-color 0.2s;
+                }
+
+                input:focus {
+                  outline: none;
+                  border-color: #319CC6;
+                }
+              }
+
+              .btn-primary {
+                margin-top: 0.5rem;
+                padding: 0.75rem;
+                background-color: #FF6F15;
+                color: #ffffff;
+                border: none;
+                border-radius: 4px;
+                font-family: "Boogaloo", cursive;
+                font-size: 1.2rem;
+                cursor: pointer;
+                transition: background-color 0.2s;
+              }
+
+              .btn-primary:hover {
+                background-color: #e05e0a;
+              }
+            }
+
+
+
+            @media screen and (max-width: 600px) {
+              .form-row {
+                grid-template-columns: 1fr;
+              }
+            }
+
+            textarea {
+              padding: 0.65rem 0.8rem;
+              border: 1px solid #C7C7C7;
+              border-radius: 4px;
+              font-size: 1rem;
+              font-family: "Roboto Condensed", sans-serif;
+              resize: vertical;
+              transition: border-color 0.2s;
+            }
+
+            textarea:focus {
+              outline: none;
+              border-color: #319CC6;
+            }
+          }
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        .contact-layout {
+          grid-template-columns: 1fr 2fr;
+          gap: 3rem;
+        }
+      }
+
+    }
+
+    /* Vehicle detail page */
+    .car-detail-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+
+      /* Reviews section (vehicle page) */
+      .reviews-section {
+        max-width: 900px;
+        margin: 2.5rem auto;
+        padding: 0 1rem;
+
+        .reviews-header {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          margin-bottom: 1.5rem;
+          flex-wrap: wrap;
+
+          h2 {
+            font-family: "Boogaloo", cursive;
+            font-size: 1.8rem;
+            margin: 0;
+          }
+
+          .avg-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+
+            .avg-stars {
+              color: #FF6F15;
+              font-size: 1.3rem;
+            }
+
+            .avg-number {
+              font-family: "Roboto Condensed", sans-serif;
+              font-weight: 700;
+              font-size: 1rem;
+            }
+
+            .avg-count {
+              font-family: "Roboto Condensed", sans-serif;
+              color: #777;
+              font-size: 0.9rem;
+            }
+          }
+        }
+
+        .reviews-list {
+          display: flex;
+          flex-direction: column;
+          gap: 1.2rem;
+
+          .review-item {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 1.2rem 1.4rem;
+
+            .review-meta {
+              display: flex;
+              align-items: center;
+              gap: 0.8rem;
+              margin-bottom: 0.6rem;
+              flex-wrap: wrap;
+
+              .review-avatar {
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                object-fit: cover;
+              }
+
+              .review-avatar-placeholder {
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background: #319CC6;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: "Boogaloo", cursive;
+                font-size: 1.1rem;
+                flex-shrink: 0;
+              }
+
+              .review-author {
+                font-family: "Roboto Condensed", sans-serif;
+                font-size: 0.95rem;
+                display: block;
+              }
+
+              .review-date {
+                font-family: "Roboto Condensed", sans-serif;
+                font-size: 0.82rem;
+                color: #999;
+              }
+
+              .review-stars {
+                margin-left: auto;
+                color: #FF6F15;
+                font-size: 1.1rem;
+              }
+            }
+
+            .review-comment {
+              font-family: "Roboto Condensed", sans-serif;
+              font-size: 0.97rem;
+              color: #444;
+              margin: 0;
+              line-height: 1.5;
+            }
+          }
+        }
+
+        .no-reviews {
+          font-family: "Roboto Condensed", sans-serif;
+          color: #888;
+          font-style: italic;
+        }
+      }
+    }
+
+    /* Review form page */
+    .review-page {
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem 4rem;
+
+      .review-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        padding: 2.5rem 2rem;
+        width: 100%;
+        max-width: 560px;
+
+        h1 {
+          font-family: "Boogaloo", cursive;
+          font-size: 2rem;
+          margin: 0 0 0.3rem;
+        }
+
+        .review-vehicle-name {
+          font-family: "Roboto Condensed", sans-serif;
+          color: #555;
+          margin: 0 0 1.8rem;
+          font-size: 0.97rem;
+        }
+
+        .review-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.2rem;
+
+          .form-group {
+            .star-rating {
+              display: flex;
+              flex-direction: row-reverse;
+              gap: 0.2rem;
+              width: fit-content;
+
+              input {
+                display: none;
+              }
+
+              label {
+                font-size: 2.2rem;
+                color: #ccc;
+                cursor: pointer;
+                transition: color 0.15s;
+              }
+
+              label:hover,
+              label:hover~label,
+              input:checked~label {
+                color: #FF6F15;
+              }
+            }
+          }
+
+          .review-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 0.5rem;
+
+            .btn-secondary {
+              padding: 0.7rem 1.4rem;
+              background: #e5e5e5;
+              color: #333;
+              border: none;
+              border-radius: 4px;
+              font-family: "Boogaloo", cursive;
+              font-size: 1.1rem;
+              cursor: pointer;
+              text-decoration: none;
+              display: inline-block;
+              transition: background 0.2s;
+            }
+
+            .btn-secondary:hover {
+              background: #d0d0d0;
+            }
+          }
+        }
+      }
+    }
+
+    .booking-history {
+      .bookings-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1.2rem;
+        font-family: "Roboto Condensed", sans-serif;
+
+        th {
+          background: #f2f2f2;
+          padding: 10px;
+          border: 1px solid #ddd;
+          text-align: left;
+          font-size: 0.9rem;
+        }
+
+        td {
+          padding: 10px;
+          border: 1px solid #ddd;
+          font-size: 0.95rem;
+
+          .status-badge {
+            text-transform: capitalize;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+          }
+
+          .status-completed {
+            background: #e6f9ee;
+            color: #1a7a40;
+          }
+
+          .status-active {
+            background: #e6f0ff;
+            color: #1a4a9a;
+          }
+
+          .status-canceled {
+            background: #ffeaea;
+            color: #aa0000;
+          }
+
+          .status-rejected {
+            background: #ffeaea;
+            color: #aa0000;
+          }
+
+          .status-pending {
+            background: #fff8e1;
+            color: #7a5a00;
+          }
+
+          .status-approved {
+            background: #fff0e1;
+            color: #7a3a00;
+          }
+
+          .reviewed-badge {
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 0.88rem;
+            color: #1a7a40;
+            font-weight: 600;
+
+            .btn-review {
+              font-family: "Roboto Condensed", sans-serif;
+              font-size: 0.88rem;
+              font-weight: 600;
+              color: #319CC6;
+              text-decoration: none;
+              border: 1px solid #319CC6;
+              padding: 3px 10px;
+              border-radius: 4px;
+              white-space: nowrap;
+              transition: background 0.2s, color 0.2s;
+            }
+
+            .btn-review:hover {
+              background: #319CC6;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    /* Client dashboard */
+    .clientHome {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+
+      h1 {
+        font-family: "Boogaloo", cursive;
+        font-size: 2.2rem;
+        margin: 0 0 1.2rem;
+      }
+
+      .client-quick-actions {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+      }
+
+      .client-bookings-section {
+        h2 {
+          font-family: "Boogaloo", cursive;
+          font-size: 1.6rem;
+          margin: 0 0 1rem;
+        }
+      }
+    }
+
+    /* Vehicles list page */
+    .vehicles-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+
+      h1 {
+        font-family: "Boogaloo", cursive;
+        font-size: 2.4rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .vehicle-search-form {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr auto;
+        gap: 1rem;
+        align-items: end;
+        margin: 1.5rem 0 2rem;
+        padding: 1.25rem;
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+
+        label {
+          display: block;
+          font-weight: 700;
+          color: #374151;
+        }
+
+        input,
+        select {
+          width: 100%;
+          margin-top: 0.35rem;
+          padding: 0.7rem;
+          border: 1px solid #d1d5db;
+          border-radius: 8px;
+          box-sizing: border-box;
+          font-size: 1rem;
+        }
+
+        .search-actions {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+
+          .btn-primary {
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            background-color: #FF6F15;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-family: "Boogaloo", cursive;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+          }
+
+          .btn-primary:hover {
+            background-color: #e05e0a;
+          }
+
+          .clear-link {
+            color: #374151;
+            font-weight: 700;
+            text-decoration: none;
+          }
+
+          .clear-link:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+
+      .vehicles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        gap: 1.5rem;
+
+        .vehicle-card {
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          text-decoration: none;
+          color: inherit;
+          transition: transform 0.2s, box-shadow 0.2s;
+          display: block;
+
+          .vehicle-card-img {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background: #f0f0f0;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            .vehicle-card-no-img {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-family: "Roboto Condensed", sans-serif;
+              color: #aaa;
+              font-size: 0.9rem;
+            }
+
+            .availability-badge {
+              position: absolute;
+              top: 0.6rem;
+              right: 0.6rem;
+              padding: 3px 10px;
+              border-radius: 20px;
+              font-family: "Roboto Condensed", sans-serif;
+              font-size: 0.8rem;
+              font-weight: 700;
+              text-transform: capitalize;
+            }
+
+            .avail-available {
+              background: #e6f9ee;
+              color: #1a7a40;
+            }
+
+            .avail-reserved {
+              background: #fff8e1;
+              color: #7a5a00;
+            }
+
+            .avail-rented {
+              background: #ffeaea;
+              color: #aa0000;
+            }
+          }
+
+          .vehicle-card-body {
+            padding: 1rem 1.2rem 1.2rem;
+
+            h2 {
+              font-family: "Boogaloo", cursive;
+              font-size: 1.3rem;
+              margin: 0 0 0.2rem;
+              color: #000;
+            }
+
+            .vehicle-year {
+              font-family: "Roboto Condensed", sans-serif;
+              font-size: 0.88rem;
+              color: #777;
+              margin: 0 0 0.7rem;
+              text-transform: capitalize;
+            }
+
+            .vehicle-specs {
+              display: flex;
+              gap: 0.6rem;
+              flex-wrap: wrap;
+              margin-bottom: 0.8rem;
+
+              span {
+                font-family: "Roboto Condensed", sans-serif;
+                font-size: 0.82rem;
+                background: #f4f4f4;
+                padding: 2px 8px;
+                border-radius: 4px;
+                color: #555;
+                text-transform: capitalize;
+              }
+            }
+
+            .vehicle-price {
+              font-family: "Boogaloo", cursive;
+              font-size: 1.3rem;
+              color: #FF6F15;
+              margin: 0;
+
+              span {
+                font-size: 0.9rem;
+                color: #888;
+                font-family: "Roboto Condensed", sans-serif;
+              }
+
+              .large {
+                font-size: 2rem;
+                margin-bottom: 1.2rem;
+              }
+            }
+          }
+        }
+
+        .vehicle-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+      }
+
+      @media (max-width: 1000px) {
+        .vehicles-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .vehicle-search-form {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .search-actions {
+          grid-column: 1 / -1;
+        }
+
+      }
+
+      @media (max-width: 650px) {
+
+        .vehicles-grid,
+        .vehicle-search-form {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .no-results {
+        font-family: "Roboto Condensed", sans-serif;
+        color: #888;
+        font-size: 1.1rem;
+        margin-top: 2rem;
+      }
+    }
+
+    /* Vehicle detail page */
+    .car-detail-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+
+      .car-detail-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        .car-detail-img {
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+          background: #f0f0f0;
+          min-height: 280px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+
+          .availability-badge {
+            font-size: 0.9rem;
+            padding: 5px 14px;
+          }
+        }
+
+        .car-detail-info {
+          h1 {
+            font-family: "Boogaloo", cursive;
+            font-size: 2rem;
+            margin: 0 0 0.3rem;
+          }
+
+          .car-year {
+            font-size: 1.3rem;
+            color: #777;
+          }
+
+          .car-specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+            font-family: "Roboto Condensed", sans-serif;
+
+            .car-specs-table th {
+              text-align: left;
+              padding: 6px 10px 6px 0;
+              color: #777;
+              font-weight: 600;
+              font-size: 0.9rem;
+              width: 40%;
+            }
+
+            .car-specs-table td {
+              padding: 6px 0;
+              font-size: 0.95rem;
+              text-transform: capitalize;
+              color: #222;
+            }
+
+            .unavailable-msg {
+              font-family: "Roboto Condensed", sans-serif;
+              color: #aa0000;
+              margin-top: 1.5rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        .car-detail-layout {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+
+    /* Receipt / Invoice */
+    .receipt-page {
+      max-width: 780px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+
+      .receipt-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+        .receipt-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          gap: 1rem;
+          border-bottom: 2px solid #C7C7C7;
+          padding-bottom: 1.2rem;
+          margin-bottom: 1rem;
+
+          .receipt-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+
+            .receipt-logo {
+              width: 48px;
+              height: auto;
+            }
+
+            h1 {
+              font-family: "Boogaloo", cursive;
+              font-size: 1.6rem;
+              margin: 0;
+              color: #000;
+            }
+          }
+
+          .receipt-meta {
+            text-align: right;
+
+            h2 {
+              font-family: "Boogaloo", cursive;
+              font-size: 1.4rem;
+              margin: 0 0 0.2rem;
+              color: #000;
+            }
+
+            .receipt-id {
+              font-family: "Roboto Condensed", sans-serif;
+              font-size: 0.9rem;
+              color: #555;
+              margin: 0;
+              font-weight: 600;
+            }
+
+            .receipt-date {
+              font-family: "Roboto Condensed", sans-serif;
+              font-size: 0.85rem;
+              color: #888;
+              margin: 0.1rem 0 0;
+            }
+          }
+        }
+
+        .receipt-status {
+          margin-bottom: 1.5rem;
+        }
+
+        .receipt-body {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem 2rem;
+          margin-bottom: 1.5rem;
+
+          .receipt-section {
+            h3 {
+              font-family: "Boogaloo", cursive;
+              font-size: 1.1rem;
+              margin: 0 0 0.6rem;
+              color: #319CC6;
+              border-bottom: 1px solid #e5e5e5;
+              padding-bottom: 0.3rem;
+            }
+
+            .receipt-table {
+              width: 100%;
+              border-collapse: collapse;
+              font-family: "Roboto Condensed", sans-serif;
+              font-size: 0.9rem;
+
+              th {
+                text-align: left;
+                color: #888;
+                font-weight: 600;
+                padding: 4px 10px 4px 0;
+                width: 40%;
+                vertical-align: top;
+
+                td {
+                  color: #222;
+                  padding: 4px 0;
+                  vertical-align: top;
+                }
+              }
+
+
+            }
+          }
+        }
+
+
+
+        @media screen and (max-width: 600px) {
+          .receipt-body {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .receipt-total {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: #000;
+          color: #fff;
+          border-radius: 6px;
+          padding: 1rem 1.4rem;
+          margin-top: 0.5rem;
+          font-family: "Boogaloo", cursive;
+          font-size: 1.2rem;
+
+          .receipt-amount {
+            font-size: 1.8rem;
+            color: #FF6F15;
+          }
+        }
+
+        .receipt-thanks {
+          font-family: "Roboto Condensed", sans-serif;
+          font-size: 0.9rem;
+          color: #888;
+          text-align: center;
+          margin: 1.2rem 0 0;
+          font-style: italic;
+        }
+      }
+
+      .receipt-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+
+        body header,
+        body nav {
+          display: none !important;
+        }
+
+        .receipt-card {
+          box-shadow: none;
+          border: none;
+          padding: 0;
+        }
+
+        .receipt-page {
+          margin: 0;
+          padding: 0;
         }
       }
     }
@@ -314,6 +1971,32 @@ body {
         display: none;
       }
     }
+  }
+}
+
+@media (max-width: 700px) {
+  h1 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .admin-dashboard,
+  .admin-section,
+  .maintenance-section {
+    margin: 1rem;
+    padding: 1.25rem;
+  }
+
+  .admin-table,
+  .users-table,
+  .vehicles-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  #inv-display {
+    grid-template-columns: 1fr;
   }
 }
 
