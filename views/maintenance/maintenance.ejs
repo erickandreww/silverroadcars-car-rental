@@ -23,14 +23,14 @@
       <tbody>
         <% data.forEach(maintenance => { %>
           <tr>
-            <td><%= maintenance.brand %> <%= maintenance.model %></td>
-            <td><%= maintenance.plate %></td>
-            <td><%= maintenance.maintenanceType || "N/A" %></td>
-            <td><%= maintenance.maintenanceDate ? new Date(maintenance.maintenanceDate).toLocaleDateString() : "N/A" %></td>
-            <td>$<%= maintenance.cost || "0.00" %></td>
-            <td><%= maintenance.status %></td>
-            <td><%= maintenance.createdByName || "N/A" %></td>
-            <td>
+            <td data-label="Vehicle"><%= maintenance.brand %> <%= maintenance.model %></td>
+            <td data-label="Plate"><%= maintenance.plate %></td>
+            <td data-label="Type"><%= maintenance.maintenanceType || "N/A" %></td>
+            <td data-label="Date"><%= maintenance.maintenanceDate ? new Date(maintenance.maintenanceDate).toLocaleDateString() : "N/A" %></td>
+            <td data-label="Cost">$<%= maintenance.cost || "0.00" %></td>
+            <td data-label="Status"><%= maintenance.status %></td>
+            <td data-label="Created By"><%= maintenance.createdByName || "N/A" %></td>
+            <td data-label="Actions">
               <a href="/users/maintenance/<%= maintenance.maintenanceId %>">Edit</a>
             </td>
           </tr>

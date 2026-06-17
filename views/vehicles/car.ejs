@@ -29,7 +29,7 @@
 
       <% if (vehicle.availabilityStatus === 'available') { %>
         <% if (locals.sessionUser && sessionUser.role === 'client') { %>
-          <a href="/clients/rent/<%= vehicle.vehicleId %>" class="btn-primary" style="display:inline-block; text-decoration:none; margin-top:1.5rem;">Rent This Car</a>
+          <a href="/clients/rent/<%= vehicle.vehicleId %>" class="btn-primary">Rent This Car</a>
         <% } else { %>
           <a href="/login/loginClient" class="btn-primary" style="display:inline-block; text-decoration:none; margin-top:1.5rem;">Login to Rent</a>
         <% } %>

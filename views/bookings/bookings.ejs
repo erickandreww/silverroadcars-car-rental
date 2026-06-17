@@ -37,39 +37,37 @@
       <tbody>
         <% data.forEach(booking => { %>
           <tr>
-            <td>
+            <td data-label="Client">
               <%= booking.clientName || "Unknown Client" %><br>
               <small><%= booking.clientEmail || "" %></small>
             </td>
 
-            <td>
+            <td data-label="Vehicle">
               <%= booking.brand %> <%= booking.model %><br>
               <small>Plate: <%= booking.plate || "N/A" %></small>
             </td>
 
-            <td>
+            <td data-label="Dates">
               <%= booking.startDate ? new Date(booking.startDate).toLocaleDateString() : "N/A" %>
               -
               <%= booking.endDate ? new Date(booking.endDate).toLocaleDateString() : "N/A" %>
             </td>
 
-            <td><%= booking.totalDays || 0 %></td>
+            <td data-label="Total Days"><%= booking.totalDays || 0 %></td>
 
-            <td>
-              $<%= booking.totalValue || "0.00" %>
-            </td>
+            <td data-label="Total Value">$<%= booking.totalValue || "0.00" %></td>
 
-            <td>
+            <td data-label="Status">
               <span class="status-badge status-<%= booking.bookingStatus %>">
                 <%= booking.bookingStatus %>
               </span>
             </td>
 
-            <td>
+            <td data-label="Approved By">
               <%= booking.approvedByName || "Not approved yet" %>
             </td>
 
-            <td>
+            <td data-label="Actions">
               <a href="/users/bookings/<%= booking.bookingId %>" class="table-action">
                 Details
               </a>

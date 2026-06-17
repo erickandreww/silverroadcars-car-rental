@@ -28,13 +28,13 @@
       <tbody>
         <% vehicles.forEach(vehicle => { %>
           <tr>
-            <td><%= vehicle.brand %> <%= vehicle.model %></td>
-            <td><%= vehicle.plate %></td>
-            <td><%= vehicle.year %></td>
-            <td>$<%= vehicle.dailyPrice %></td>
-            <td><%= vehicle.availabilityStatus %></td>
-            <td><%= vehicle.maintenanceStatus ? "Yes" : "No" %></td>
-            <td>
+            <td data-label="Vehicle"><%= vehicle.brand %> <%= vehicle.model %></td>
+            <td data-label="Plate"><%= vehicle.plate %></td>
+            <td data-label="Year"><%= vehicle.year %></td>
+            <td data-label="Price / Day">$<%= vehicle.dailyPrice %></td>
+            <td data-label="Status"><%= vehicle.availabilityStatus %></td>
+            <td data-label="Maintenance"><%= vehicle.maintenanceStatus ? "Yes" : "No" %></td>
+            <td data-label="Actions">
               <a href="/admin/vehicles/<%= vehicle.vehicleId %>" class="table-action">
                 Edit
               </a>

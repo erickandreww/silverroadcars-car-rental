@@ -35,7 +35,7 @@
               <td>
                 <%= new Date(booking.endDate).toLocaleDateString() %>
               </td>
-              <td style="font-weight:bold;">$<%= parseFloat(booking.totalValue).toFixed(2) %>
+              <td>$<%= parseFloat(booking.totalValue).toFixed(2) %></td>
               </td>
               <td><span class="status-badge status-<%= booking.bookingStatus %>">
                   <%= booking.bookingStatus %>
@@ -44,7 +44,7 @@
                 <% if (booking.bookingStatus==='approved' ) { %>
                   <a href="/clients/payment/<%= booking.bookingId %>" class="btn-review">Pay Now</a>
                   <% } else { %>
-                    <span style="color:#aaa;">—</span>
+                    <span class="empty-action">—</span>
                     <% } %>
               </td>
             </tr>
@@ -52,7 +52,7 @@
         </tbody>
       </table>
       <% } else { %>
-        <p style="color:#888; margin-top:1rem;">You have no active bookings. <a href="/vehicles">Browse vehicles</a> to
+        <p class="no-current-bookings">You have no active bookings. <a href="/vehicles">Browse vehicles</a> to
           get started.</p>
         <% } %>
   </div>

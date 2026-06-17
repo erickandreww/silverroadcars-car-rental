@@ -5,7 +5,7 @@
 } %>
 
 <style>
-    body {text-align: center; background: #fafafa; }
+    body {text-align: center; }
     h1 { color: #0080ff; font-size: 40px; }
     h2 { color: #666; }
     pre { background: #f4f4f4; padding: 15px; text-align: left; max-width: 800px; margin: 20px auto; overflow-x: auto; border: 1px solid #ddd; }
@@ -15,12 +15,5 @@
     <h1>Oops! Something went wrong.</h1>
     <h2>Status Code: <%= status %></h2>
     <p><%= message %></p>
-
-    <% if (error && error.stack) { %>
-        <h3>Stack Trace:</h3>
-        <pre><%= error.stack %></pre>
-    <% } %>
-
-    <br>
     <a href="/">Go back home</a>
 </div>
