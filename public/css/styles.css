@@ -5,7 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 /*Variables*/
 body {
-  background-color: #FF6F15;
+  background-color: #FFB273;
   font-family: "Boogaloo", cursive;
   margin: 0;
 }
@@ -584,6 +584,67 @@ body main .maintenance-section .admin-form textarea,
 body main .maintenance-section .maintenance-form textarea {
   resize: vertical;
 }
+body main .admin-section .admin-form input,
+body main .admin-section .admin-form select,
+body main .admin-section .admin-form textarea,
+body main .admin-section .addUser input,
+body main .admin-section .addUser select,
+body main .admin-section .addUser textarea,
+body main .admin-section .editUser input,
+body main .admin-section .editUser select,
+body main .admin-section .editUser textarea,
+body main .admin-section .addCar input,
+body main .admin-section .addCar select,
+body main .admin-section .addCar textarea,
+body main .admin-section .editCar input,
+body main .admin-section .editCar select,
+body main .admin-section .editCar textarea,
+body main .admin-section .maintenance-form input,
+body main .admin-section .maintenance-form select,
+body main .admin-section .maintenance-form textarea,
+body main .admin-section #addUser-form input,
+body main .admin-section #addUser-form select,
+body main .admin-section #editUser-form input,
+body main .admin-section #editUser-form select,
+body main .admin-section #addCar-form input,
+body main .admin-section #addCar-form select,
+body main .admin-section #editCar-form input,
+body main .admin-section #editCar-form select,
+body main .maintenance-section .admin-form input,
+body main .maintenance-section .admin-form select,
+body main .maintenance-section .admin-form textarea,
+body main .maintenance-section .addUser input,
+body main .maintenance-section .addUser select,
+body main .maintenance-section .addUser textarea,
+body main .maintenance-section .editUser input,
+body main .maintenance-section .editUser select,
+body main .maintenance-section .editUser textarea,
+body main .maintenance-section .addCar input,
+body main .maintenance-section .addCar select,
+body main .maintenance-section .addCar textarea,
+body main .maintenance-section .editCar input,
+body main .maintenance-section .editCar select,
+body main .maintenance-section .editCar textarea,
+body main .maintenance-section .maintenance-form input,
+body main .maintenance-section .maintenance-form select,
+body main .maintenance-section .maintenance-form textarea,
+body main .maintenance-section #addUser-form input,
+body main .maintenance-section #addUser-form select,
+body main .maintenance-section #editUser-form input,
+body main .maintenance-section #editUser-form select,
+body main .maintenance-section #addCar-form input,
+body main .maintenance-section #addCar-form select,
+body main .maintenance-section #editCar-form input,
+body main .maintenance-section #editCar-form select {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
 body main .admin-section .admin-form input:focus,
 body main .admin-section .admin-form select:focus,
 body main .admin-section .admin-form textarea:focus,
@@ -816,22 +877,22 @@ body main .maintenance-section .btn-success:hover {
 body main {
   /* Admin Dashboard */
 }
-body main .admin-dashboard {
+body main .users-dashboard {
   max-width: 1100px;
   margin: 2rem auto;
   padding: 2rem;
 }
-body main .admin-dashboard .dashboard-intro {
+body main .users-dashboard .dashboard-intro {
   margin-bottom: 2rem;
   font-size: 1.1rem;
   color: #4b5563;
 }
-body main .admin-dashboard .dashboard-intro .dashboard-cards {
+body main .users-dashboard .dashboard-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
-body main .admin-dashboard .dashboard-intro .dashboard-cards .dashboard-card {
+body main .users-dashboard .dashboard-cards .dashboard-card {
   display: block;
   padding: 1.75rem;
   background-color: #ffffff;
@@ -842,16 +903,16 @@ body main .admin-dashboard .dashboard-intro .dashboard-cards .dashboard-card {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-body main .admin-dashboard .dashboard-intro .dashboard-cards .dashboard-card h2 {
+body main .users-dashboard .dashboard-cards .dashboard-card h2 {
   margin-top: 0;
   margin-bottom: 0.75rem;
   color: #111827;
 }
-body main .admin-dashboard .dashboard-intro .dashboard-cards .dashboard-card p {
+body main .users-dashboard .dashboard-cards .dashboard-card p {
   color: #4b5563;
   line-height: 1.5;
 }
-body main .admin-dashboard .dashboard-intro .dashboard-cards .dashboard-card:hover {
+body main .users-dashboard .dashboard-cards .dashboard-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
@@ -1346,62 +1407,44 @@ body main .review-page .review-card .review-form .review-actions .btn-secondary 
 body main .review-page .review-card .review-form .review-actions .btn-secondary:hover {
   background: #d0d0d0;
 }
-body main .booking-history .bookings-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1.2rem;
-  font-family: "Roboto Condensed", sans-serif;
-}
-body main .booking-history .bookings-table th {
-  background: #f2f2f2;
-  padding: 10px;
-  border: 1px solid #ddd;
-  text-align: left;
-  font-size: 0.9rem;
-}
-body main .booking-history .bookings-table td {
-  padding: 10px;
-  border: 1px solid #ddd;
-  font-size: 0.95rem;
-}
-body main .booking-history .bookings-table td .status-badge {
+body main .booking-history .status-badge {
   text-transform: capitalize;
   font-weight: bold;
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.85rem;
 }
-body main .booking-history .bookings-table td .status-completed {
+body main .booking-history .status-completed {
   background: #e6f9ee;
   color: #1a7a40;
 }
-body main .booking-history .bookings-table td .status-active {
+body main .booking-history .status-active {
   background: #e6f0ff;
   color: #1a4a9a;
 }
-body main .booking-history .bookings-table td .status-canceled {
+body main .booking-history .status-canceled {
   background: #ffeaea;
   color: #aa0000;
 }
-body main .booking-history .bookings-table td .status-rejected {
+body main .booking-history .status-rejected {
   background: #ffeaea;
   color: #aa0000;
 }
-body main .booking-history .bookings-table td .status-pending {
+body main .booking-history .status-pending {
   background: #fff8e1;
   color: #7a5a00;
 }
-body main .booking-history .bookings-table td .status-approved {
+body main .booking-history .status-approved {
   background: #fff0e1;
   color: #7a3a00;
 }
-body main .booking-history .bookings-table td .reviewed-badge {
+body main .booking-history .reviewed-badge {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.88rem;
   color: #1a7a40;
   font-weight: 600;
 }
-body main .booking-history .bookings-table td .reviewed-badge .btn-review {
+body main .booking-history .reviewed-badge .btn-review {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.88rem;
   font-weight: 600;
@@ -1413,7 +1456,7 @@ body main .booking-history .bookings-table td .reviewed-badge .btn-review {
   white-space: nowrap;
   transition: background 0.2s, color 0.2s;
 }
-body main .booking-history .bookings-table td .reviewed-badge .btn-review:hover {
+body main .booking-history .reviewed-badge .btn-review:hover {
   background: #319CC6;
   color: #fff;
 }
@@ -1436,10 +1479,43 @@ body main .clientHome .client-quick-actions {
   flex-wrap: wrap;
   margin-bottom: 2.5rem;
 }
+body main .clientHome .client-quick-actions .btn-secondary {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background-color: #319CC6;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-family: "Boogaloo", cursive;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+body main .clientHome .client-quick-actions .btn-secondary:hover {
+  background-color: #b0b0b0;
+}
 body main .clientHome .client-bookings-section h2 {
   font-family: "Boogaloo", cursive;
   font-size: 1.6rem;
   margin: 0 0 1rem;
+}
+body main .clientHome .client-bookings-section .bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.2rem;
+  font-family: "Roboto Condensed", sans-serif;
+}
+body main .clientHome .client-bookings-section .bookings-table th {
+  background: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.9rem;
+}
+body main .clientHome .client-bookings-section .bookings-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
 }
 body main {
   /* Vehicles list page */
@@ -1677,7 +1753,7 @@ body main .car-detail-page .car-detail-layout .car-detail-info h1 {
   font-size: 2rem;
   margin: 0 0 0.3rem;
 }
-body main .car-detail-page .car-detail-layout .car-detail-info .car-year {
+body main .car-detail-page .car-detail-layout .car-detail-info h1 .car-year {
   font-size: 1.3rem;
   color: #777;
 }
@@ -1687,7 +1763,7 @@ body main .car-detail-page .car-detail-layout .car-detail-info .car-specs-table 
   margin-bottom: 1rem;
   font-family: "Roboto Condensed", sans-serif;
 }
-body main .car-detail-page .car-detail-layout .car-detail-info .car-specs-table .car-specs-table th {
+body main .car-detail-page .car-detail-layout .car-detail-info .car-specs-table th {
   text-align: left;
   padding: 6px 10px 6px 0;
   color: #777;
@@ -1695,17 +1771,37 @@ body main .car-detail-page .car-detail-layout .car-detail-info .car-specs-table 
   font-size: 0.9rem;
   width: 40%;
 }
-body main .car-detail-page .car-detail-layout .car-detail-info .car-specs-table .car-specs-table td {
+body main .car-detail-page .car-detail-layout .car-detail-info .car-specs-table td {
   padding: 6px 0;
   font-size: 0.95rem;
   text-transform: capitalize;
   color: #222;
 }
-body main .car-detail-page .car-detail-layout .car-detail-info .car-specs-table .unavailable-msg {
+body main .car-detail-page .car-detail-layout .car-detail-info .unavailable-msg {
   font-family: "Roboto Condensed", sans-serif;
   color: #aa0000;
   margin-top: 1.5rem;
   font-weight: 600;
+}
+body main .car-detail-page .car-detail-layout .car-detail-info .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #0f172a;
+  /* Sleek dark neutral */
+  color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+body main .car-detail-page .car-detail-layout .car-detail-info .btn-primary:hover {
+  background-color: #1e293b;
+}
+body main .car-detail-page .car-detail-layout .car-detail-info .btn-primary:active {
+  transform: scale(0.98);
 }
 @media screen and (min-width: 768px) {
   body main .car-detail-page .car-detail-layout {
@@ -2111,10 +2207,10 @@ body main .profile-container .client-profile-card .card-footer .btn-primary {
   text-decoration: none;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
-body main .profile-container .client-profile-card .card-footer .btn-primary .btn-primary:hover {
+body main .profile-container .client-profile-card .card-footer .btn-primary:hover {
   background-color: #1e293b;
 }
-body main .profile-container .client-profile-card .card-footer .btn-primary .btn-primary:active {
+body main .profile-container .client-profile-card .card-footer .btn-primary:active {
   transform: scale(0.98);
 }
 body main .profile-container {

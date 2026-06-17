@@ -548,6 +548,42 @@ body {
         resize: vertical;
       }
 
+      .admin-form input,
+      .admin-form select,
+      .admin-form textarea,
+      .addUser input,
+      .addUser select,
+      .addUser textarea,
+      .editUser input,
+      .editUser select,
+      .editUser textarea,
+      .addCar input,
+      .addCar select,
+      .addCar textarea,
+      .editCar input,
+      .editCar select,
+      .editCar textarea,
+      .maintenance-form input,
+      .maintenance-form select,
+      .maintenance-form textarea,
+      #addUser-form input,
+      #addUser-form select,
+      #editUser-form input,
+      #editUser-form select,
+      #addCar-form input,
+      #addCar-form select,
+      #editCar-form input,
+      #editCar-form select {
+        width: 100%;
+        margin-top: 0.4rem;
+        padding: 0.75rem;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        background-color: #ffffff;
+      }
+
       .admin-form input:focus,
       .admin-form select:focus,
       .admin-form textarea:focus,
@@ -674,7 +710,7 @@ body {
 
 
     /* Admin Dashboard */
-    .admin-dashboard {
+    .users-dashboard {
       max-width: 1100px;
       margin: 2rem auto;
       padding: 2rem;
@@ -683,39 +719,39 @@ body {
         margin-bottom: 2rem;
         font-size: 1.1rem;
         color: #4b5563;
+      }
 
-        .dashboard-cards {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-          gap: 1.5rem;
+      .dashboard-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
 
-          .dashboard-card {
-            display: block;
-            padding: 1.75rem;
-            background-color: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            text-decoration: none;
+        .dashboard-card {
+          display: block;
+          padding: 1.75rem;
+          background-color: #ffffff;
+          border: 1px solid #e5e7eb;
+          border-radius: 14px;
+          text-decoration: none;
+          color: #111827;
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+          h2 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
             color: #111827;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-            h2 {
-              margin-top: 0;
-              margin-bottom: 0.75rem;
-              color: #111827;
-            }
-
-            p {
-              color: #4b5563;
-              line-height: 1.5;
-            }
           }
 
-          .dashboard-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+          p {
+            color: #4b5563;
+            line-height: 1.5;
           }
+        }
+
+        .dashboard-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         }
       }
     }
@@ -1300,87 +1336,68 @@ body {
     }
 
     .booking-history {
-      .bookings-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 1.2rem;
-        font-family: "Roboto Condensed", sans-serif;
 
-        th {
-          background: #f2f2f2;
-          padding: 10px;
-          border: 1px solid #ddd;
-          text-align: left;
-          font-size: 0.9rem;
+
+      .status-badge {
+        text-transform: capitalize;
+        font-weight: bold;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+      }
+
+      .status-completed {
+        background: #e6f9ee;
+        color: #1a7a40;
+      }
+
+      .status-active {
+        background: #e6f0ff;
+        color: #1a4a9a;
+      }
+
+      .status-canceled {
+        background: #ffeaea;
+        color: #aa0000;
+      }
+
+      .status-rejected {
+        background: #ffeaea;
+        color: #aa0000;
+      }
+
+      .status-pending {
+        background: #fff8e1;
+        color: #7a5a00;
+      }
+
+      .status-approved {
+        background: #fff0e1;
+        color: #7a3a00;
+      }
+
+      .reviewed-badge {
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: 0.88rem;
+        color: #1a7a40;
+        font-weight: 600;
+
+        .btn-review {
+          font-family: "Roboto Condensed", sans-serif;
+          font-size: 0.88rem;
+          font-weight: 600;
+          color: #319CC6;
+          text-decoration: none;
+          border: 1px solid #319CC6;
+          padding: 3px 10px;
+          border-radius: 4px;
+          white-space: nowrap;
+          transition: background 0.2s, color 0.2s;
         }
 
-        td {
-          padding: 10px;
-          border: 1px solid #ddd;
-          font-size: 0.95rem;
-
-          .status-badge {
-            text-transform: capitalize;
-            font-weight: bold;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-          }
-
-          .status-completed {
-            background: #e6f9ee;
-            color: #1a7a40;
-          }
-
-          .status-active {
-            background: #e6f0ff;
-            color: #1a4a9a;
-          }
-
-          .status-canceled {
-            background: #ffeaea;
-            color: #aa0000;
-          }
-
-          .status-rejected {
-            background: #ffeaea;
-            color: #aa0000;
-          }
-
-          .status-pending {
-            background: #fff8e1;
-            color: #7a5a00;
-          }
-
-          .status-approved {
-            background: #fff0e1;
-            color: #7a3a00;
-          }
-
-          .reviewed-badge {
-            font-family: "Roboto Condensed", sans-serif;
-            font-size: 0.88rem;
-            color: #1a7a40;
-            font-weight: 600;
-
-            .btn-review {
-              font-family: "Roboto Condensed", sans-serif;
-              font-size: 0.88rem;
-              font-weight: 600;
-              color: #319CC6;
-              text-decoration: none;
-              border: 1px solid #319CC6;
-              padding: 3px 10px;
-              border-radius: 4px;
-              white-space: nowrap;
-              transition: background 0.2s, color 0.2s;
-            }
-
-            .btn-review:hover {
-              background: #319CC6;
-              color: #fff;
-            }
-          }
+        .btn-review:hover {
+          background: #319CC6;
+          color: #fff;
         }
       }
     }
@@ -1402,6 +1419,23 @@ body {
         gap: 0.8rem;
         flex-wrap: wrap;
         margin-bottom: 2.5rem;
+
+        .btn-secondary {
+          margin-top: 0.5rem;
+          padding: 0.75rem;
+          background-color: #319CC6;
+          color: #ffffff;
+          border: none;
+          border-radius: 4px;
+          font-family: "Boogaloo", cursive;
+          font-size: 1.2rem;
+          cursor: pointer;
+          transition: background-color 0.2s;
+        }
+
+        .btn-secondary:hover {
+          background-color: #b0b0b0;
+        }
       }
 
       .client-bookings-section {
@@ -1409,6 +1443,27 @@ body {
           font-family: "Boogaloo", cursive;
           font-size: 1.6rem;
           margin: 0 0 1rem;
+        }
+
+        .bookings-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 1.2rem;
+          font-family: "Roboto Condensed", sans-serif;
+
+          th {
+            background: #f2f2f2;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-size: 0.9rem;
+          }
+
+          td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 0.95rem;
+          }
         }
       }
     }
@@ -1684,12 +1739,14 @@ body {
             font-family: "Boogaloo", cursive;
             font-size: 2rem;
             margin: 0 0 0.3rem;
+
+            .car-year {
+              font-size: 1.3rem;
+              color: #777;
+            }
           }
 
-          .car-year {
-            font-size: 1.3rem;
-            color: #777;
-          }
+
 
           .car-specs-table {
             width: 100%;
@@ -1697,7 +1754,7 @@ body {
             margin-bottom: 1rem;
             font-family: "Roboto Condensed", sans-serif;
 
-            .car-specs-table th {
+            th {
               text-align: left;
               padding: 6px 10px 6px 0;
               color: #777;
@@ -1706,20 +1763,46 @@ body {
               width: 40%;
             }
 
-            .car-specs-table td {
+            td {
               padding: 6px 0;
               font-size: 0.95rem;
               text-transform: capitalize;
               color: #222;
             }
 
-            .unavailable-msg {
-              font-family: "Roboto Condensed", sans-serif;
-              color: #aa0000;
-              margin-top: 1.5rem;
-              font-weight: 600;
-            }
           }
+
+          .unavailable-msg {
+            font-family: "Roboto Condensed", sans-serif;
+            color: #aa0000;
+            margin-top: 1.5rem;
+            font-weight: 600;
+          }
+
+          .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #0f172a;
+            /* Sleek dark neutral */
+            color: #ffffff;
+            padding: 0.625rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+          }
+
+          .btn-primary:hover {
+            background-color: #1e293b;
+          }
+
+          .btn-primary:active {
+            transform: scale(0.98);
+          }
+
+
         }
       }
 
@@ -2176,14 +2259,14 @@ body {
             font-weight: 500;
             text-decoration: none;
             transition: background-color 0.2s ease, transform 0.1s ease;
+          }
 
-            .btn-primary:hover {
-              background-color: #1e293b;
-            }
+          .btn-primary:hover {
+            background-color: #1e293b;
+          }
 
-            .btn-primary:active {
-              transform: scale(0.98);
-            }
+          .btn-primary:active {
+            transform: scale(0.98);
           }
         }
 
