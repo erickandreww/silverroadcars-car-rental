@@ -116,18 +116,6 @@ const createBookingClient = async (req, res, next) => {
     }
 }
 
-const getCurrentBookings = async (req, res, next) => {
-  const clientId = req.authUser.clientId;
-  try {
-    const bookings = await bookingsModel.getCurrentBookingsByClientId(clientId);
-    
-
-    res.render("clients/currentBookings", { title: 'Current Bookings', bookings });
-  } catch (err) {
-    console.error("Error fetching current bookings:", err);
-    next(err);
-  }
-}
 const getBookingHistory = async (req, res, next) => {
   const clientId = req.authUser.clientId;
   try {
@@ -142,4 +130,4 @@ const getBookingHistory = async (req, res, next) => {
   }
 }
 
-module.exports = { homeController, profileController, editviewController, editProfileController, getRentCarView, createBookingClient, getCurrentBookings, getBookingHistory };
+module.exports = { homeController, profileController, editviewController, editProfileController, getRentCarView, createBookingClient, getBookingHistory };

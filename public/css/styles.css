@@ -11,13 +11,13 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #FEB389;
+  background-color: #F4F6F8;
   font-family: "Boogaloo", cursive;
   margin: 0;
 }
 
 header {
-  background-color: #1ca5ff;
+  background-color: #C0C0C0;
   min-height: 88px;
   padding: 0 1.5rem;
   display: grid;
@@ -169,11 +169,11 @@ main {
 }
 
 .cont-form form input:focus {
-  border: solid 1px #1ca5ff;
+  border: solid 1px #C0C0C0;
 }
 
 .cont-form form button {
-  background-color: #1ca5ff;
+  background-color: #C0C0C0;
 }
 
 .cont-form form select {
@@ -211,7 +211,7 @@ section .carousel {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  background-color: #1ca5ff;
+  background-color: #C0C0C0;
   border-radius: 8px;
 }
 
@@ -2515,7 +2515,7 @@ h1 {
 }
 
 footer {
-  background-color: #1ca5ff;
+  background-color: #C0C0C0;
   color: #000000;
   display: grid;
   grid-template-columns: 1.2fr 1.2fr 1fr;
@@ -2842,7 +2842,7 @@ footer p {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.8rem 1.3rem;
-  background-color: #1ca5ff;
+  background-color: #C0C0C0;
   color: #000000;
   border-radius: 10px;
   font-size: 1.15rem;
@@ -2979,7 +2979,7 @@ footer p {
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  border-bottom: 2px solid #1ca5ff;
+  border-bottom: 2px solid #C0C0C0;
 }
 
 .client-bookings-section .bookings-table td {
@@ -3022,7 +3022,7 @@ footer p {
 .client-bookings-section .btn-review {
   display: inline-block;
   padding: 0.45rem 0.85rem;
-  background-color: #1ca5ff;
+  background-color: #C0C0C0;
   color: #000000;
   border: 1px solid #111827;
   border-radius: 8px;
@@ -3083,7 +3083,7 @@ footer p {
   margin-top: 1rem;
   padding: 1rem 1.2rem;
   background-color: #ffffff;
-  border-left: 5px solid #1ca5ff;
+  border-left: 5px solid #C0C0C0;
   border-radius: 10px;
   color: #374151;
   font-family: "Roboto Condensed", sans-serif;
@@ -3283,7 +3283,7 @@ footer p {
 
 .rental-form input:focus {
   outline: none;
-  border-color: #1ca5ff;
+  border-color: #C0C0C0;
   box-shadow: 0 0 0 3px rgba(28, 165, 255, 0.2);
 }
 
@@ -3292,7 +3292,7 @@ footer p {
   padding: 1.25rem;
   background-color: #f9fafb;
   border: 1px solid #e5e7eb;
-  border-left: 5px solid #1ca5ff;
+  border-left: 5px solid #C0C0C0;
   border-radius: 12px;
 }
 
@@ -3318,7 +3318,7 @@ footer p {
   width: 100%;
   margin-top: 0.5rem;
   padding: 0.9rem 1.25rem;
-  background-color: #1ca5ff;
+  background-color: #C0C0C0;
   color: #000000;
   border: none;
   border-radius: 10px;
@@ -3491,7 +3491,7 @@ footer p {
 
 .payment-form input:focus {
   outline: none;
-  border-color: #1ca5ff;
+  border-color: #C0C0C0;
   box-shadow: 0 0 0 3px rgba(28, 165, 255, 0.2);
 }
 
@@ -3554,7 +3554,7 @@ footer p {
 }
 
 .payment-actions .return-link:hover {
-  color: #1ca5ff;
+  color: #C0C0C0;
   text-decoration: underline;
 }
 

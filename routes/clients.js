@@ -12,7 +12,6 @@ router.get('/profile', verifyToken, requireClient, clientsController.profileCont
 router.get('/profile/edit', verifyToken, requireClient, clientsController.editviewController);
 router.post('/profile/edit', verifyToken, requireClient, upload.single('clientAvatar'), clientsController.editProfileController);
 
-router.get('/bookings/current', clientsController.getCurrentBookings);
 router.get('/bookings/history', clientsController.getBookingHistory);
 
 router.get('/rent/:vehicleId', verifyToken, requireClient, clientsController.getRentCarView);
