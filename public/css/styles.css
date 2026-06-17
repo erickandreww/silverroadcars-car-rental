@@ -2123,6 +2123,162 @@ form[action="/admin/vehicles/delete"] button:hover {
   font-weight: 500;
 }
 
+/* Base container & typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+
+.profile-container {
+  max-width: 650px;
+  margin: 2rem auto;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+/* Card layout */
+.client-profile-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  border: 1px solid #e2e8f0;
+  padding: 2rem;
+}
+
+/* Header / Avatar Section */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  background-color: #3b82f6; /* Modern primary blue */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.profile-meta h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.role-badge {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Grid Info Fields */
+.card-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+  .card-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.info-group.full-width {
+  grid-column: span 2;
+}
+
+@media (max-width: 480px) {
+  .info-group.full-width {
+    grid-column: span 1;
+  }
+}
+
+.info-group label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.info-value {
+  margin: 0;
+  font-size: 1rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* Buttons and Actions */
+.card-footer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #0f172a; /* Sleek dark neutral */
+  color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1e293b;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Error Alert */
+.error-message {
+  background-color: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.error-message p {
+  margin: 0;
+  color: #991b1b;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
 /*# sourceMappingURL=styles.css.map */
 
 

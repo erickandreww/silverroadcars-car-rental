@@ -5,9 +5,11 @@
 <% } %>
 
 <% if (reviewed) { %>
-  <p class="contact-success" style="background:#e6f9ee; border:1px solid #2ecc71; border-radius:6px; padding:0.8rem 1.2rem; margin-bottom:1rem; color:#1a7a40;">
-    Thanks for your review!
-  </p>
+  <!-- Modernized success banner -->
+  <div class="success-banner">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <span>Thanks for your review!</span>
+  </div>
 <% } %>
 
 <% if (typeof error !== 'undefined' && error) { %>
@@ -16,43 +18,78 @@
 
 <section class="booking-history">
   <% if (locals.bookings && bookings.length > 0) { %>
-    <table class="bookings-table">
-      <thead>
-        <tr>
-          <th>Vehicle</th>
-          <th>Plate</th>
-          <th>Start Date</th>
-          <th>End Date</th>
-          <th>Total Paid</th>
-          <th>Status</th>
-          <th>Review</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% bookings.forEach(booking => { %>
-          <tr>
-            <td><%= booking.brand %> <%= booking.model %></td>
-            <td style="text-transform:uppercase;"><%= booking.plate %></td>
-            <td><%= new Date(booking.startDate).toLocaleDateString() %></td>
-            <td><%= new Date(booking.endDate).toLocaleDateString() %></td>
-            <td style="font-weight:bold; color:#2ecc71;">$<%= parseFloat(booking.totalValue).toFixed(2) %></td>
-            <td><span class="status-badge status-<%= booking.bookingStatus %>"><%= booking.bookingStatus %></span></td>
-            <td>
-              <% if (booking.bookingStatus === 'completed') { %>
-                <% if (reviewedIds.has(booking.bookingId)) { %>
-                  <span class="reviewed-badge">✓ Reviewed</span>
-                <% } else { %>
-                  <a href="/clients/review/<%= booking.bookingId %>" class="btn-review">Leave a Review</a>
-                <% } %>
-              <% } else { %>
-                <span style="color:#aaa;">—</span>
-              <% } %>
-            </td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
+    <!-- Wrapper to cleanly handle the new table layout styles -->
+    <div class="bookings-wrapper">
+      <div class="table-responsive">
+        <table class="modern-data-table history-table">
+          <thead>
+            <tr>
+              <th>Vehicle</th>
+              <th>Plate</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Total Paid</th>
+              <th>Status</th>
+              <th class="text-right">Review</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% bookings.forEach(booking => { %>
+              <tr>
+                <!-- Vehicle Title -->
+                <td>
+                  <span class="vehicle-title-text"><%= booking.brand %> <%= booking.model %></span>
+                </td>
+                
+                <!-- Plate Number -->
+                <td>
+                  <span class="plate-code-badge"><%= booking.plate %></span>
+                </td>
+                
+                <!-- Dates -->
+                <td><%= new Date(booking.startDate).toLocaleDateString() %></td>
+                <td><%= new Date(booking.endDate).toLocaleDateString() %></td>
+                
+                <!-- Total Cost -->
+                <td>
+                  <span class="history-currency-text">$<%= parseFloat(booking.totalValue).toFixed(2) %></span>
+                </td>
+                
+                <!-- Status Badge -->
+                <td>
+                  <span class="status-pill status-<%= booking.bookingStatus.toLowerCase() %>">
+                    <%= booking.bookingStatus %>
+                  </span>
+                </td>
+                
+                <!-- Interactive Action Column -->
+                <td class="text-right">
+                  <% if (booking.bookingStatus.toLowerCase() === 'completed') { %>
+                    <% if (reviewedIds.has(booking.bookingId)) { %>
+                      <span class="badge-reviewed-done">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        Reviewed
+                      </span>
+                    <% } else { %>
+                      <a href="/clients/review/<%= booking.bookingId %>" class="btn-action-review">
+                        Leave a Review
+                      </a>
+                    <% } %>
+                  <% } else { %>
+                    <span class="action-null-dash">—</span>
+                  <% } %>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   <% } else { %>
     <p style="margin-top:1.5rem; color:#666;">You have no past bookings.</p>
   <% } %>
 </section>
+
+<div style="margin-top:2rem; text-align:center; background-color:#f9f9f9; padding:1rem; border-radius:6px; width:100%; max-width:400px; margin-left:auto; margin-right:auto;">
+  <a href="/clients" class="btn-back">← Back to Dashboard</a>
+</div>
